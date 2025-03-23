@@ -1,9 +1,9 @@
 // script.js
-import { iniciarFase1 } from './fase1.js';
-import { iniciarFase2 } from './fase2.js';
-import { iniciarFase3 } from './fase3.js';
-import { iniciarFase4 } from './fase4.js';
-import { iniciarFase5 } from './fase5.js';
+import { iniciarFase1 } from './modules/fase1.js';
+import { iniciarFase2 } from './modules/fase2.js';
+import { iniciarFase3 } from './modules/fase3.js';
+import { iniciarFase4 } from './modules/fase4.js';
+import { iniciarFase5 } from './modules/fase5.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const startScreen = document.getElementById('start-screen');
