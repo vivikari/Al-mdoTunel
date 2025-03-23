@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Aventura em Texto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> <!-- Link para o arquivo CSS -->
+</head>
+<body>
+  <!-- Tela de Início -->
+  <div id="start-screen">
+    <img src="https://i.pinimg.com/1200x/2f/8a/58/2f8a5837938dc5798519592981868546.jpg" alt="Imagem do Jogo" id="imagem-inicial">
+    <h1>Além do Túnel</h1>
+    <button id="start-button">Iniciar Jogo</button>
+  </div>
+
+  <!-- Tela do Jogo (inicialmente oculta) -->
+  <div id="game-container" style="display: none;">
+    <p id="narrative-text"></p> <!-- Texto narrativo da fase -->
+    <div id="choices-container"></div> <!-- Container para os botões de escolha -->
+    <!-- Campo de entrada para o enigma -->
+    <div id="enigma-container" style="display: none;">
+        <input type="text" id="resposta-enigma" placeholder="Digite sua resposta">
+        <button id="enviar-resposta">Enviar</button>
+        <p id="feedback-enigma"></p>
+  </div>
+
+  <!-- Script principal do jogo -->
+  <script type="module">
+    // Importação dos módulos das fases
+    import { iniciarFase1 } from './modules/fase1.js';
+    import { iniciarFase2 } from './modules/fase2.js';
+    import { iniciarFase3 } from './modules/fase3.js';
+    import { iniciarFase4 } from './modules/fase4.js';
+    import { iniciarFase5 } from './modules/fase5.js';
+
+    // Inicialização do jogo
+    document.addEventListener('DOMContentLoaded', () => {
+      const startScreen = document.getElementById('start-screen');
+      const gameContainer = document.getElementById('game-container');
+      const startButton = document.getElementById('start-button');
+
+      // Exibe a tela de início e oculta a tela do jogo
+      startScreen.style.display = 'block';
+      gameContainer.style.display = 'none';
+
+      // Evento de clique no botão "Iniciar Jogo"
+      startButton.addEventListener('click', () => {
+        startScreen.style.display = 'none';
+        gameContainer.style.display = 'block';
+        iniciarFase1(); // Inicia a Fase 1
+      });
+
+      // Função para carregar fases dinamicamente
+      window.carregarFase = (nomeFase) => {
+        if (nomeFase === "fase2") {
+          iniciarFase2();
+        } else if (nomeFase === "fase3") {
+          iniciarFase3();
+        } else if (nomeFase === "fase4") {
+          iniciarFase4();
+        } else if (nomeFase === "fase5") {
+          iniciarFase5();
+        } else if (nomeFase === "finalVerdadeiro" || nomeFase === "finalAlternativo" || nomeFase === "finalSombrio") {
+          // Finais já são tratados dentro da Fase 5
+        }
+      };
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
