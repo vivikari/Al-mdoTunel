@@ -15,15 +15,18 @@
     <button id="start-button">Iniciar Jogo</button>
   </div>
 
-  <!-- Tela do Jogo (inicialmente oculta) -->
+  <!-- Tela do Jogo -->
   <div id="game-container" style="display: none;">
-    <p id="narrative-text"></p> <!-- Texto narrativo da fase -->
-    <div id="choices-container"></div> <!-- Container para os botões de escolha -->
-    <!-- Campo de entrada para o enigma -->
+    <div id="hud">
+      <div id="placar-vidas">❤️ x<span id="vidas">1</span></div>
+    </div>
+    <p id="narrative-text"></p>
+    <div id="choices-container"></div>
     <div id="enigma-container" style="display: none;">
-        <input type="text" id="resposta-enigma" placeholder="Digite sua resposta">
-        <button id="enviar-resposta">Enviar</button>
-        <p id="feedback-enigma"></p>
+      <input type="text" id="resposta-enigma" placeholder="Sua resposta...">
+      <button id="enviar-resposta">Responder</button>
+      <p id="feedback-enigma"></p>
+    </div>
   </div>
 
   <!-- Script principal do jogo -->
@@ -35,35 +38,45 @@
     import { iniciarFase4 } from './modules/fase4.js';
     import { iniciarFase5 } from './modules/fase5.js';
 
-    // Inicialização do jogo
-    document.addEventListener('DOMContentLoaded', () => {
-      const startScreen = document.getElementById('start-screen');
-      const gameContainer = document.getElementById('game-container');
+    // Sistema Global de Vidas
+    window.estadoJogo = {
+      vidas: 1,
+      atualizarVidas: function(mudanca) {
+        this.vidas = Math.max(0, Math.min(1, this.vidas + mudanca));
+        document.getElementById('vidas').textContent = this.vidas;
+        
+        if (mudanca < 0) {
+          const elemento = document.getElementById('vidas');
+          elemento.classList.add('perdeu-vida');
+          setTimeout(() => elemento.classList.remove('perdeu-vida'), 500);
+        }
+        
+        if (this.vidas <= 0) {
+          document.getElementById('narrative-text').innerHTML = 
+            '<span class="final-sombrio">Você perdeu todas as vidas!</span>';
+          document.getElementById('choices-container').innerHTML = 
+            '<button class="choice-button" onclick="window.location.reload()">Reiniciar</button>';
+        }
+      }
+    }
+
+   // Inicialização do Jogo
+   document.addEventListener('DOMContentLoaded', () => {
       const startButton = document.getElementById('start-button');
-
-      // Exibe a tela de início e oculta a tela do jogo
-      startScreen.style.display = 'block';
-      gameContainer.style.display = 'none';
-
-      // Evento de clique no botão "Iniciar Jogo"
       startButton.addEventListener('click', () => {
-        startScreen.style.display = 'none';
-        gameContainer.style.display = 'block';
-        iniciarFase1(); // Inicia a Fase 1
+        document.getElementById('start-screen').style.display = 'none';
+        document.getElementById('game-container').style.display = 'block';
+        iniciarFase1();
       });
-
-      // Função para carregar fases dinamicamente
+      
+      // Sistema de Navegação entre Fases
       window.carregarFase = (nomeFase) => {
-        if (nomeFase === "fase2") {
-          iniciarFase2();
-        } else if (nomeFase === "fase3") {
-          iniciarFase3();
-        } else if (nomeFase === "fase4") {
-          iniciarFase4();
-        } else if (nomeFase === "fase5") {
-          iniciarFase5();
-        } else if (nomeFase === "finalVerdadeiro" || nomeFase === "finalAlternativo" || nomeFase === "finalSombrio") {
-          // Finais já são tratados dentro da Fase 5
+        switch(nomeFase) {
+          case "fase2": iniciarFase2(); break;
+          case "fase3": iniciarFase3(); break;
+          case "fase4": iniciarFase4(); break;
+          case "fase5": iniciarFase5(); break;
+          default: iniciarFase1();
         }
       };
     });
