@@ -7,6 +7,7 @@
 1. **Iniciar o Jogo:**
    - Clique no botão **"Iniciar Jogo"** na tela inicial.
    - Siga as instruções e escolha entre as opções apresentadas para avançar na história.
+   - Mecanica do jogo: A história avança conforme suas escolhas; 3 finais alternativos com base nas escolhas do jogador; O jogador iniciará com 4 vidas.
 
 2. **Tomar Decisões:**
    - Em cada fase, você terá várias escolhas. Cada decisão afetará o rumo da história.
@@ -14,11 +15,11 @@
 
 3. **Resolver Enigmas:**
    - Em certas fases, você precisará resolver enigmas para avançar.
-   - Se errar, perderá uma vida. Você começa com **3 vidas**.
+   - Se errar, perderá uma vida. Você começa com **4 vidas**.
 
 4. **Final do Jogo:**
-   - O jogo tem múltiplos finais, dependendo das suas escolhas.
-   - Se perder todas as vidas, você pode reiniciar o jogo e tentar novamente.
+   - O jogo terá 3 finais distintos, dependendo das suas escolhas.
+   - Se perder todas as vidas, você pode reiniciar o jogo, ou a fase em que está, e tentar novamente.
 
 ---
 
@@ -54,11 +55,13 @@ Para rodar o jogo localmente, siga os passos abaixo:
 
 O jogo é dividido em **5 fases**, cada uma com suas próprias escolhas e desafios:
 
-1. **Fase 1:** A cidade dos espíritos.
-2. **Fase 2:** A Casa de Banhos.
-3. **Fase 3:** A viagem no trem.
-4. **Fase 4:** O banquete de Madame Uzume.
-5. **Fase 5:** O confronto final.
+1. **Fase 1:** O túnel das Sombras
+2. **Fase 2:** O Banquete Proibido
+3. **Fase 3:** Ajudando na Casa de Banhos
+4. **Fase 4:** O Espírito Fedido
+5. **Fase 5:** Sem Rosto e o Caos
+6. **Fase 6:** A Jornada até Zeniba
+7. **Fase 7:** O Caminho até a Verdade
 
 ---
 
@@ -71,12 +74,6 @@ O jogo possui **3 finais diferentes**:
 
 ---
 
-## 🖼️ Capturas de Tela
-
-| Tela Inicial |
-|--------------|
-| ![Tela Inicial](https://i.pinimg.com/1200x/2f/8a/58/2f8a5837938dc5798519592981868546.jpg) | 
----
 
 ## 📝 Contribuição
 
@@ -108,7 +105,7 @@ Este projeto está sob a licença **MIT**. Veja o arquivo [LICENSE](LICENSE) par
 ## 👏 Créditos
 
 - **Desenvolvido por:** [Vivian Kaori Umaki](https://github.com/vivikari) e [Mellina Bizinoto Pádua](https://github.com/Mellina-ship-it)
-- **Inspiração:** Baseado em histórias de aventura e fantasia.
+- **Inspiração:** Baseado no filme A Viagem de Chihiro, de Hayao Miyazaki
 - **Imagens:** [Fonte das Imagens](https://exemplo.com)
 
 ---
