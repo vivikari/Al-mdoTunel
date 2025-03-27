@@ -1,76 +1,67 @@
+// Importa os módulos das fases e o estado do jogo
 import { iniciarFase1 } from './modules/fase1.js';
 import { iniciarFase2 } from './modules/fase2.js';
 import { iniciarFase3 } from './modules/fase3.js';
 import { iniciarFase4 } from './modules/fase4.js';
 import { iniciarFase5 } from './modules/fase5.js';
+import { estadoJogo } from './modules/estadoJogo.js'; // Importa a lógica do jogo
 
-// Sistema Global de Vidas e Estado do Jogo
-window.estadoJogo = {
-  vidas: 1,
-  gameOverAtivo: false,
-  
-  atualizarVidas: function(mudanca) {
-    this.vidas = Math.max(0, Math.min(1, this.vidas + mudanca));
-    document.getElementById('vidas').textContent = this.vidas;
-    
-    if (mudanca < 0) {
-      const vidaElement = document.getElementById('vidas');
-      vidaElement.classList.add('perdeu-vida');
-      setTimeout(() => vidaElement.classList.remove('perdeu-vida'), 500);
-    }
-    
-    if (this.vidas <= 0 && !this.gameOverAtivo) {
-      this.gameOverAtivo = true;
-      
-      const narrativeText = document.getElementById('narrative-text');
-      const choicesContainer = document.getElementById('choices-container');
-      
-      narrativeText.innerHTML = '<span class="final-sombrio">🔥 Você perdeu todas as vidas!</span>';
-      choicesContainer.innerHTML = '';
-      
-      const reiniciar = document.createElement('button');
-      reiniciar.className = 'choice-button';
-      reiniciar.id = 'reiniciar-jogo';
-      reiniciar.textContent = 'Reiniciar';
-      reiniciar.addEventListener('click', () => {
-        this.gameOverAtivo = false;
-        window.reiniciarJogo();
-      });
-      choicesContainer.appendChild(reiniciar);
-    }
-  }
-};
+// Inicializa o estado global no objeto window para ser acessível em outros arquivos
+window.estadoJogo = estadoJogo;
 
-// Função para reiniciar o jogo
+// Função global para reiniciar o jogo
 window.reiniciarJogo = function() {
+  console.log("🔄 Reiniciando jogo...");
+  
+  // Esconde o jogo e volta para a tela inicial
   document.getElementById('game-container').style.display = 'none';
   document.getElementById('start-screen').style.display = 'block';
   
-  window.estadoJogo.vidas = 1;
-  window.estadoJogo.gameOverAtivo = false;
-  document.getElementById('vidas').textContent = window.estadoJogo.vidas;
+  // Reseta o estado do jogo
+  estadoJogo.vidas = 1;
+  estadoJogo.gameOverAtivo = false;
+  document.getElementById('vidas').textContent = estadoJogo.vidas;
   document.getElementById('choices-container').innerHTML = '';
   document.getElementById('narrative-text').innerHTML = '';
 };
 
-// Inicialização do Jogo
+// Aguarda o carregamento do DOM para iniciar os eventos
 document.addEventListener('DOMContentLoaded', () => {
+  console.log("✅ Jogo carregado!");
+
+  // Obtém o botão de início do jogo e adiciona um evento de clique
   const startButton = document.getElementById('start-button');
   startButton.addEventListener('click', () => {
+    console.log("🎮 Iniciando jogo...");
+    
+    // Oculta a tela inicial e exibe o container do jogo
     document.getElementById('start-screen').style.display = 'none';
     document.getElementById('game-container').style.display = 'block';
+    
+    // Inicia a primeira fase
     iniciarFase1();
   });
 
-  // Sistema de Navegação entre Fases
-  window.carregarFase = (nomeFase) => {
-    document.getElementById('choices-container').innerHTML = '';
-    switch(nomeFase) {
-      case "fase2": iniciarFase2(); break;
-      case "fase3": iniciarFase3(); break;
-      case "fase4": iniciarFase4(); break;
-      case "fase5": iniciarFase5(); break;
-      default: iniciarFase1();
-    }
-  };
+  // Função responsável pela navegação entre fases
+window.carregarFase = (nomeFase) => {
+  document.getElementById('choices-container').innerHTML = ''; // Limpa as escolhas anteriores
+  
+  // Navegação entre fases
+  switch(nomeFase) {
+    case "fase2":
+      iniciarFase2();  // Chama a função para a fase 2
+      break;
+    case "fase3":
+      iniciarFase3();  // Chama a função para a fase 3
+      break;
+    case "fase4":
+      iniciarFase4();  // Chama a função para a fase 4
+      break;
+    case "fase5":
+      iniciarFase5();  // Chama a função para a fase 5
+      break;
+    default:
+      iniciarFase1();  // Caso não tenha um nome de fase válido, inicia a fase 1
+  }
+ };
 });
