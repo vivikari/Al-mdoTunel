@@ -1,4 +1,5 @@
-**Além do Túnel** é um jogo de aventura em texto onde você toma decisões que afetam o destino da protagonista e de seus pais. Explore um mundo misterioso, resolva enigmas e descubra finais alternativos enquanto tenta salvar sua família de uma maldição sombria.
+**Além do Túnel** é um jogo de aventura em texto onde suas decisões afetam o destino da protagonista e de seus pais. Explore um mundo misterioso, resolva enigmas e descubra finais alternativos enquanto tenta salvar sua família de uma maldição sombria.
+Você é Chihiro, uma jovem que, ao atravessar um túnel misterioso com sua família, acaba se separando deles e descobre um mundo repleto de espíritos e seres mágicos. Para sobreviver, precisará trabalhar em uma Casa de Banhos Espirituais, enfrentar desafios enigmáticos e provar sua coragem. Cada escolha molda sua jornada – será que você conseguirá quebrar a maldição e encontrar o caminho de volta para casa?
 
 ---
 
@@ -106,6 +107,7 @@ Este projeto está sob a licença **MIT**. Veja o arquivo [LICENSE](LICENSE) par
 
 - **Desenvolvido por:** [Vivian Kaori Umaki](https://github.com/vivikari) e [Mellina Bizinoto Pádua](https://github.com/Mellina-ship-it)
 - **Inspiração:** Baseado no filme A Viagem de Chihiro, de Hayao Miyazaki
+- **Filme:** Trailer: https://www.youtube.com/watch?v=fDUFP7EeXLE; Filme: https://www.netflix.com/title/60023642; Sobre: https://pt.wikipedia.org/wiki/A_Viagem_de_Chihiro
 - **Imagens:** [Fonte das Imagens](https://exemplo.com)
 
 ---
