@@ -66,7 +66,7 @@ O jogo é dividido em **7 fases**, cada uma com suas próprias escolhas e desafi
 5. **Fase 5:** Sem Rosto e o Caos
 6. **Fase 6:** O Trem Fantasma
 7. **Fase 7:** O Encontro com Zeniba
-8. **Fase 7:** O Caminho até a Verdade
+8. **Fase 8:** O Caminho até a Verdade
 
 ---
 
