@@ -11,7 +11,7 @@ Você é Chihiro, uma jovem que, ao atravessar um túnel misterioso com sua fam�
 1. **Iniciar o Jogo:**
    - Clique no botão **"Iniciar Jogo"** na tela inicial.
    - Siga as instruções e escolha entre as opções apresentadas para avançar na história.
-   - Mecanica do jogo: A história avança conforme suas escolhas; 3 finais alternativos com base nas escolhas do jogador; O jogador iniciará com 4 vidas.
+   - Mecanica do jogo: A história avança conforme suas escolhas; 3 finais alternativos com base nas escolhas do jogador; O jogador iniciará com 3 vidas.
 
 2. **Tomar Decisões:**
    - Em cada fase, você terá várias escolhas. Cada decisão afetará o rumo da história.
