@@ -1,0 +1,11 @@
+{
+  "name": "chihiro-game-backend",
+  "version": "1.0.0",
+  "main": "back/server.js",
+  "scripts": {
+    "start": "node back/server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

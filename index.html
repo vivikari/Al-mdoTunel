@@ -1,86 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jogo de Aventura em Texto</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css"> <!-- Link para o arquivo CSS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Jornada de Chihiro</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Tela de Início -->
-  <div id="start-screen">
-    <img src="https://i.pinimg.com/1200x/2f/8a/58/2f8a5837938dc5798519592981868546.jpg" alt="Imagem do Jogo" id="imagem-inicial">
-    <h1>Além do Túnel</h1>
-    <button id="start-button">Iniciar Jogo</button>
+  <div id="background"></div>
+
+  <!-- MENU INICIAL -->
+  <div id="menu" class="menu">
+    <div class="menu-content">
+      <h1 class="title">Além do Túnel</h1>
+      <p class="description">
+        Você é Chihiro, uma jovem que, ao atravessar um túnel misterioso com sua família,
+        acaba se separando deles e descobre um mundo repleto de espíritos e seres mágicos.
+      </p>
+      <ul class="mechanics">
+        <li>A história avança conforme suas escolhas.</li>
+        <li>3 finais diferentes baseados nas suas decisões.</li>
+        <li>Você começa com 3 vidas. ❤️</li>
+      </ul>
+      <button id="start-button" onclick="startGame()">Iniciar</button>
+      <button onclick="carregarJogo()">Continuar Jogo</button>
+      <button onclick="resetarJogo()">Novo Jogo</button>
+    </div>
   </div>
 
-  <!-- Tela do Jogo -->
-  <div id="game-container" style="display: none;">
-    <div id="hud">
-      <div id="placar-vidas">❤️ x<span id="vidas">1</span></div>
+  <!-- ÁREA DO JOGO -->
+  <div class="overlay" id="game-container" style="display: none;">
+    <div class="hud">
+      <span id="vidas">3❤️</span>
+      <button onclick="salvarJogo(cenaAtual, vidas)">Salvar</button>
+
     </div>
-    <p id="narrative-text"></p>
-    <div id="choices-container"></div>
-    <div id="enigma-container" style="display: none;">
-      <input type="text" id="resposta-enigma" placeholder="Sua resposta...">
-      <button id="enviar-resposta">Responder</button>
-      <p id="feedback-enigma"></p>
+
+    <div id="fase-cartao" class="fase-cartao"></div>
+
+    <div class="game-box">
+      <h2 id="fase-title"></h2>
+      <div class="character" id="character"></div>
+      <div class="dialogue" id="dialogue"></div>
+      <div class="choices" id="choices"></div>
     </div>
   </div>
 
-  <!-- Script principal do jogo -->
-  <script type="module">
-    // Importação dos módulos das fases
-    import { iniciarFase1 } from './modules/fase1.js';
-    import { iniciarFase2 } from './modules/fase2.js';
-    import { iniciarFase3 } from './modules/fase3.js';
-    import { iniciarFase4 } from './modules/fase4.js';
-    import { iniciarFase5 } from './modules/fase5.js';
-
-    // Sistema Global de Vidas
-    window.estadoJogo = {
-      vidas: 1,
-      atualizarVidas: function(mudanca) {
-        this.vidas = Math.max(0, Math.min(1, this.vidas + mudanca));
-        document.getElementById('vidas').textContent = this.vidas;
-        
-        if (mudanca < 0) {
-          const elemento = document.getElementById('vidas');
-          elemento.classList.add('perdeu-vida');
-          setTimeout(() => elemento.classList.remove('perdeu-vida'), 500);
-        }
-        
-        if (this.vidas <= 0) {
-          document.getElementById('narrative-text').innerHTML = 
-            '<span class="final-sombrio">Você perdeu todas as vidas!</span>';
-          document.getElementById('choices-container').innerHTML = 
-            '<button class="choice-button" onclick="window.location.reload()">Reiniciar</button>';
-        }
-      }
-    }
-
-   // Inicialização do Jogo
-   document.addEventListener('DOMContentLoaded', () => {
-      const startButton = document.getElementById('start-button');
-      startButton.addEventListener('click', () => {
-        document.getElementById('start-screen').style.display = 'none';
-        document.getElementById('game-container').style.display = 'block';
-        iniciarFase1();
-      });
-      
-      // Sistema de Navegação entre Fases
-      window.carregarFase = (nomeFase) => {
-        switch(nomeFase) {
-          case "fase2": iniciarFase2(); break;
-          case "fase3": iniciarFase3(); break;
-          case "fase4": iniciarFase4(); break;
-          case "fase5": iniciarFase5(); break;
-          default: iniciarFase1();
-        }
-      };
-    });
-  </script>
+  <!-- chamada dos outros arquivos -->
+  <script src="storage.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

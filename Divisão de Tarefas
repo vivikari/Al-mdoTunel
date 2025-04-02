@@ -1,0 +1,108 @@
+                                                                                                                  
+Divisão de Tarefas
+📂 Divisão de Tarefas Vivian e Mellina
+Vivian: Foco na estrutura e lógica
+HTML:
+Criar o layout inicial no arquivo index.html, incluindo o menu principal e as áreas do jogo.
+
+Configurar os elementos com IDs e classes necessários para interação com o CSS e JavaScript.
+
+Garantir que o título do jogo "Além do Túnel" esteja bem representado.
+
+JavaScript:
+Desenvolver as funções principais no arquivo script.js:
+
+renderScene: Controlar a lógica de renderização de cada cena do jogo.
+
+startGame: Configurar o início do jogo e progresso.
+
+Implementar o sistema de escolhas e transições no jogo, garantindo que as decisões do jogador levem a diferentes resultados.
+
+Sistema de Vidas:
+Criar o sistema de controle de vidas:
+
+Variável global vidas para acompanhar o número de vidas do jogador.
+
+Funções para gerenciar vidas:
+
+atualizarVidas: Atualizar o HUD sempre que vidas forem ganhas ou perdidas.
+
+perderVida: Reduzir vidas em situações específicas e reiniciar o jogo se as vidas chegarem a zero.
+
+ganharVida: Adicionar vidas como recompensa por ações no jogo.
+
+
+
+
+Local Storage:
+Integrar as funções para salvar e carregar o progresso do jogador:
+
+salvarNoLocalStorage: Armazenar informações do progresso no Local Storage.
+
+carregarDoLocalStorage: Recuperar informações salvas e restaurar o estado do jogo.
+
+limparLocalStorage: Limpar os dados do Local Storage para iniciar um novo jogo.
+
+Colaboração
+Mellina:
+ Integrar as funções de salvamento e carregamento (salvarJogo, carregarJogo, resetarJogo) ao fluxo geral do jogo.
+
+Verificar se o layout do HTML se adapta ao estilo desejado.
+
+Mellina: Foco na visualização e estilo
+CSS:
+
+Estilizar o jogo no arquivo style.css para criar uma experiência visual atraente:
+
+Design do menu inicial, incluindo fundo, botões e texto (cores e transições).
+
+Configurar o HUD (exibição de vidas e outras informações do jogo).
+
+Estilizar diálogos e botões de escolha para garantir clareza e imersão.
+
+Criar transições visuais no sistema de vidas (por exemplo, corações piscando ao perder uma vida).
+
+Posicionar os elementos visuais no layout para não interferirem com outras funcionalidades.
+
+Assets:
+Organizar e otimizar imagens no diretório assets, incluindo fundos, personagens e elementos de interação.
+
+Garantir que os ícones de vida (como corações) estejam dimensionados corretamente e se integrem ao estilo geral do jogo.
+
+Colaboração
+Vivian:
+Colaborar para ajustar o layout no HTML e confirmar que os estilos são aplicados corretamente.
+
+Testar como o sistema de vidas é exibido no HUD.
+
+Tarefas compartilhadas
+Documentação(README.md):
+Criar e revisar o README.md para explicar o projeto, incluindo:
+
+Introdução ao jogo "Além do Túnel".
+
+Estrutura dos arquivos e como executar o jogo.
+
+Informações sobre inspiração no filme "A Viagem de Chihiro".
+
+Ambas devem revisar o conteúdo para clareza e completude.
+
+Teste:
+Testar todas as funcionalidades do jogo regularmente:
+Conferir o funcionamento do sistema de vidas e transições visuais.
+
+Validar as funções de salvamento e carregamento via Local Storage.
+
+Verificar a integração do estilo ao fluxo lógico do jogo.
+
+Ajustar bugs no código e melhorar a interação entre lógica e estilo.
+
+Servidor:
+Juntas trabalhamos no arquivo server.js (se necessário) para configurar o servidor local e garantir que o jogo funcione sem problemas.
+
+Resumo de tudo: 
+Vivian: Estrutura, lógica do jogo, sistema de vidas e Local Storage (HTML e JavaScript).
+
+Mellina: Visual, estilo do jogo e assets (CSS e assets).
+
+Ambas: Documentação, testes e configuração do servidor.
