@@ -57,7 +57,7 @@ Para rodar o jogo localmente, siga os passos abaixo:
 
 ## 🎮 Fases do Jogo
 
-O jogo é dividido em **5 fases**, cada uma com suas próprias escolhas e desafios:
+O jogo é dividido em **7 fases**, cada uma com suas próprias escolhas e desafios:
 
 1. **Fase 1:** O Túnel das Sombras
 2. **Fase 2:** O Banquete Proibido
