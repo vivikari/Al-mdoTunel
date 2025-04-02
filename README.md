@@ -19,7 +19,7 @@ Você é Chihiro, uma jovem que, ao atravessar um túnel misterioso com sua fam�
 
 3. **Resolver Enigmas:**
    - Em certas fases, você precisará resolver enigmas para avançar.
-   - Se errar, perderá uma vida. Você começa com **4 vidas**.
+   - Se errar, perderá uma vida. Você começa com **3 vidas**.
 
 4. **Final do Jogo:**
    - O jogo terá 3 finais distintos, dependendo das suas escolhas.
