@@ -1,4 +1,4 @@
-# Jogo Alem do Túnel
+# Jogo Além do Túnel
 [![Jogue Aqui](https://img.shields.io/badge/Click%20para%20jogar-blue?style=for-the-badge)](https://alemdotunel.netlify.app/)
 
 **Além do Túnel** é um jogo de aventura inspirado em A Viagem de Chihiro, ele é um jogo em texto onde suas decisões afetam o destino da protagonista e de seus pais. Explore um mundo misterioso, resolva enigmas e descubra finais alternativos enquanto tenta salvar sua família de uma maldição sombria.
